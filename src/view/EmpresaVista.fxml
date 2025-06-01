@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane prefHeight="607.0" prefWidth="972.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EmpresaController">  
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <children>
+                <Separator prefWidth="200.0" />
+                <GridPane hgap="10" vgap="10">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="30" />
+                        <ColumnConstraints percentWidth="70" />
+                    </columnConstraints>
+                   <children>
+                       <Label text="Nombre:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                       <TextField fx:id="txtNombre" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                       <Label text="CIF:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                       <TextField fx:id="txtCIF" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                       <Label text="Sector:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                       <TextField fx:id="txtSector" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                       <Label text="Contacto:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                       <TextField fx:id="txtContacto" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                       <Label text="Teléfono:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                       <TextField fx:id="txtTelefono" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                       <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                       <TextField fx:id="txtEmail" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                       <Label text="Dirección:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                       <TextField fx:id="txtDireccion" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                   </children>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+                </GridPane>               
+                <HBox alignment="CENTER" spacing="10">
+                    <children>
+                        <Label fx:id="txtCaja" prefHeight="38.0" prefWidth="323.0" textAlignment="CENTER">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="btnAgregar" onAction="#guardarEmpresa" text="Agregar" />
+                        <Button fx:id="btnModificar" onAction="#modificarEmpresa" text="Modificar" />
+                        <Button fx:id="btnEliminar" onAction="#eliminarEmpresa" text="Eliminar" />
+                        <Button fx:id="btnVolver" onAction="#volverAlMenu" text="Volver al menu" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </center>
+    <bottom>
+        <TableView fx:id="tableEmpresas" onMouseClicked="#seleccionar" prefHeight="200" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn fx:id="colId" prefWidth="50" text="ID" />
+                <TableColumn fx:id="colNombre" prefWidth="150" text="Nombre" />
+                <TableColumn fx:id="colCIF" prefWidth="100" text="CIF" />
+                <TableColumn fx:id="colSector" prefWidth="100" text="Sector" />
+                <TableColumn fx:id="colContacto" prefWidth="120" text="Contacto" />
+                <TableColumn fx:id="colTelefono" prefWidth="100" text="Teléfono" />
+                <TableColumn fx:id="colEmail" prefWidth="150" text="Email" />
+                <TableColumn fx:id="colDireccion" prefWidth="200" text="Dirección" />
+            </columns>
+        </TableView>
+    </bottom>
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+    <top>
+        
+        <Label text="GESTOR FP DUAL - GESTIÓN DE EMPRESAS -" BorderPane.alignment="CENTER">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+    </top>
+</BorderPane>

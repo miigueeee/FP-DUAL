@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane prefHeight="607.0" prefWidth="972.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AlumnoController">  
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <children>
+                <Separator prefWidth="200.0" />
+                <GridPane hgap="10" vgap="10">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="30" />
+                        <ColumnConstraints percentWidth="70" />
+                    </columnConstraints>
+                   <children>
+                       <Label text="Nombre:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                       <TextField fx:id="txtNombre" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                       <Label text="Apellidos:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                       <TextField fx:id="txtApellidos" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                       <Label text="DNI:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                       <TextField fx:id="txtDNI" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                       <Label text="Teléfono:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                       <TextField fx:id="txtTelefono" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                       <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                       <TextField fx:id="txtEmail" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                       <Label text="Curso:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                       <TextField fx:id="txtCurso" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                       <Label text="Ciclo:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                       <TextField fx:id="txtCiclo" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                   </children>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+                </GridPane>               
+                <HBox alignment="CENTER" spacing="10">
+                    <children>
+                        <Label fx:id="txtCaja" prefHeight="38.0" prefWidth="323.0" textAlignment="CENTER">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="btnAgregar" onAction="#guardarAlumno" text="Agregar" />
+                        <Button fx:id="btnModificar" onAction="#modificarAlumno" text="Modificar" />
+                        <Button fx:id="btnEliminar" onAction="#eliminarAlumno" text="Eliminar" />
+                        <Button fx:id="btnVolver" onAction="#volverAlMenu" text="Volver al menu" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </center>
+    <bottom>
+        <TableView fx:id="tableAlumnos" onMouseClicked="#seleccionar" prefHeight="200" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn fx:id="colId" prefWidth="42.0" text="ID" />
+                <TableColumn fx:id="colNombre" prefWidth="158.0" text="Nombre" />
+                <TableColumn fx:id="colApellidos" prefWidth="175.0" text="Apellidos" />
+                <TableColumn fx:id="colDNI" prefWidth="97.0" text="DNI" />
+                <TableColumn fx:id="colTelefono" prefWidth="141.0" text="Teléfono" />
+                <TableColumn fx:id="colEmail" prefWidth="143.0" text="Email" />
+                <TableColumn fx:id="colCurso" prefWidth="82.0" text="Curso" />
+                <TableColumn fx:id="colCiclo" prefWidth="113.0" text="Ciclo" />
+            </columns>
+        </TableView>
+    </bottom>
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+    <top>
+        
+        <Label text="GESTOR FP DUAL - GESTIÓN DE ALUMNOS -" BorderPane.alignment="CENTER">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+    </top>
+</BorderPane>
